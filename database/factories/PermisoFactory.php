@@ -4,11 +4,15 @@
 
 
 use Faker\Generator as Faker;
-use App\Models\Permiso;
+use App\Models\Admin\Permiso;
+use Illuminate\Support\Str;
 
 $factory->define(Permiso::class, function (Faker $faker) {
+    $name = $faker->name;
+    $slug = Str::slug($name);
+    
     return [
-        'nombre' => $faker->word,
-        'slug' => $faker->word
+        'nombre' => $name,
+        'slug' => $slug
     ];
 });

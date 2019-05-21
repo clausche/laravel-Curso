@@ -21,8 +21,8 @@ class RolTableSeeder extends Seeder
         foreach ($rols as $key => $value) {
             DB::table('rol')->insert([
                 'nombre' => $value,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         };
         
